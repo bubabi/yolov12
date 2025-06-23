@@ -1163,7 +1163,7 @@ logger = logging.getLogger(__name__)
 USE_FLASH_ATTN = False
 try:
     import torch
-    if torch.cuda.is_available() and torch.cuda.get_device_capability()[0] >= 8:  # Ampere or newer
+    if torch.cuda.is_available():
         from flash_attn.flash_attn_interface import flash_attn_func
         USE_FLASH_ATTN = True
     else:
